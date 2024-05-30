@@ -23,12 +23,17 @@ export default class StoreTimer {
         this._webWorker = new Worker(new URL('../worker', import.meta.url));
         //Добавляем слушатель
         this._webWorker.onmessage = ((e) => {
-            const newValue: Date = e.data as Date;
-            this._setValue(newValue);
+            let newValue: number = 0;
+            if(typeof e.data === 'number' ) {
+                newValue = e.data;
+            }
+
+            this._setValue(new Date(newValue));
         });
 
+        const initValue: number = +this._value_observable;
         // Отправляем начальное значение таймеру
-        this._webWorker.postMessage(this._value_observable);
+        this._webWorker.postMessage(initValue);
     }
 
     /**
