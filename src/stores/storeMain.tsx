@@ -1,20 +1,31 @@
 import { action, computed, makeObservable, observable } from "mobx";
-import {v4 as uuidv4} from 'uuid';
-import { TimerInfo } from "../models/timerInfo";
 import StoreTimer from "./storeTimer";
 
 export default class StoreMain {
 
+    //#region timersList
     private _timersList_observable: StoreTimer[];
 
+    /**
+     * Установить список таймеров
+     * @param timersList 
+     */
     private _setTimersList(timersList: StoreTimer[]) {
         this._timersList_observable = timersList;
     }
 
+    /**
+     * Список таймров
+     */
     get timersList() {
         return this._timersList_observable;
     }
+    //#endregion
 
+    //#region События
+    /**
+     * Событие добавить новый таймер
+     */
     public eventAddTimer() {
         const timersList = this._timersList_observable.slice();
         const newTimer: StoreTimer = new StoreTimer();
@@ -23,6 +34,10 @@ export default class StoreMain {
         this._setTimersList(timersList);
     }
 
+    /**
+     * Событие удалить последний таймер
+     * @returns 
+     */
     public eventRemoveLastTimer() {
         if(!this._timersList_observable.length) {
             return;
@@ -37,6 +52,7 @@ export default class StoreMain {
 
         this._setTimersList(timersList);
     }
+    //#endregion
 
     constructor() {
         this.eventAddTimer = this.eventAddTimer.bind(this);

@@ -1,8 +1,6 @@
 import { observer } from 'mobx-react';
-import { TimerInfo } from '../../models/timerInfo';
-import './styles.css';
-import StoreMain from '../../stores/storeMain';
 import StoreTimer from '../../stores/storeTimer';
+import './styles.css';
 
 interface Props {
     readonly store: StoreTimer;
@@ -23,6 +21,9 @@ function convertTimeValueToString(value: number, length: number): string {
     }
 }
 
+/**
+ * Время таймера
+ */
 const Time = observer((props: Props)=> {
     const date = props.store.value;
     const hours = date.getHours();
@@ -39,6 +40,11 @@ const Time = observer((props: Props)=> {
     return(<div className='time'>{result}</div>);
 });
 
+/**
+ * Таймер
+ * @param props 
+ * @returns 
+ */
 export default function Timer (props: Props){
     return(
         <div className='timer'>

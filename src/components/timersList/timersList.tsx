@@ -7,6 +7,11 @@ interface Props {
     readonly store: StoreMain;
 }
 
+/**
+ * Список таймеров
+ * @param props 
+ * @returns 
+ */
 function TimersList(props: Props) {
     const timersList = props.store.timersList;
 
