@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "lib": ["dom","dom.iterable", "esnext"],
+    "noImplicitAny": true,
+    "target": "ES2017",
+    "module": "ESNext",
+    "sourceMap": false,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "jsx": "react-jsx",
+    "useDefineForClassFields": true,
+    "isolatedModules": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "resolveJsonModule": true,
+    "noEmit": true,
+  },
+  "exclude": [
+    "node_modules",
+    "api/src"
+  ]
+}

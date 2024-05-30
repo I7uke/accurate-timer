@@ -1,0 +1,18 @@
+.timer {
+    padding: 20px;
+    border: 1px solid black;
+}
+
+.time {
+    font-size: 28px;
+    padding: 0 0 10px 0;
+    text-align: center;
+}
+
+.timerButtonsContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}

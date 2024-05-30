@@ -1,0 +1,23 @@
+
+.timersListContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 10px;
+}
+
+
+.emptyTimersContainer {
+    padding: 20px 0 0 0;
+}
+
+.emptyTimersMessage {
+    font-size: 20px;
+    text-align: center;
+}
+
+.emptyTimersButtonContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 0 0 0;
+}
